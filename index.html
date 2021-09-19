@@ -5,7 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agencia el Tintero</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/mobile.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Roboto:wght@300&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -26,10 +30,13 @@
     <div id="banner1" class="banner">
         <img class="banner__photo" src="./images/bannerfoto.jpg" alt="Banner con muchos granos de café">  
         <img class="banner__simbol" src="./images/cafefucsia.svg" alt="Símbolo de café color fucsia">
-        <h3 class="banner__tittle">Sobresale sobre los demás</h3>
-        <a class="banner__button" href="#about">conocenos</a>
+        <div class="banner__absolute">
+            <h3 class="banner__tittle">Sobresale sobre <br> los demás</h3>
+            <a class="banner__button" href="#about">conócenos</a>
+        </div>
+
     </div>
-    
+
     
     <div id="about" class="aboutus">
         <div class="aboutus__block">
@@ -40,8 +47,8 @@
         </div>
         <div class="aboutus__image">
             <img class="aboutus__image__image"src="./images/copita.png" alt="Fotografía de café">
-            <img src="./images/matacafe.svg" alt="Planta de café">
-            <img src="./images/granocafe.svg" alt="Grano de café">
+            <img class="aboutus__image__simbolplant" src="./images/matacafe.svg" alt="Planta de café">
+            <img class="aboutus__image__simbolcoffe" src="./images/granocafe.svg" alt="Grano de café">
         </div>
     </div>
 

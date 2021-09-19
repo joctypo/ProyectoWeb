@@ -1,0 +1,15 @@
+@media all and (max-width:1024px) {
+ .nav {
+     flex-direction: column;
+ }
+}
+
+@media all and (max-width: 768px) {
+    .brands {
+        width: 90%;
+    }
+
+    .brands div {
+        width: 50%;
+    }
+}

@@ -52,4 +52,80 @@
     .brands div {
         width: 50%;
     }
+
+    .banner{
+        height: 50%;
+    }
+    .banner__photo{
+       
+    }
+    
+    .banner__simbol{
+        display: none;
+    }
+    
+    .banner__absolute {
+        position: absolute;
+        z-index: 10;
+        left: 0;
+        width: 100%;
+        top: 300px;
+    }
+    
+    .banner__tittle {
+        background: #FFF;
+        padding: 20px 20px 20px 100px;
+        width: fit-content;
+        font-size: 25px;
+    }
+    
+    .banner__button{
+        width:fit-content;
+        border: 2.67816px solid #EE1542;
+        border-radius: 4.01724px;
+        padding: 5px;
+        text-decoration: none;
+        color: #4B3E35;
+        margin-left: 100px;
+        display: flex;
+        margin-top: 15px;
+        background: whitesmoke;
+    }
+    
+    .aboutus__block__imagen{
+        display: none;
+    }
+
+    .aboutus__block {
+
+        padding: 10px 50px;
+    }
+
+    .aboutus__image__simbolplant {
+        display: none;
+    }
+
+    .features{
+        flex-wrap: wrap;
+    }
+
+    .meetus__simbol {
+        display: none;
+    }
+
+    .features1{
+        flex-wrap: wrap;
+        padding: 30px 100px;
+    }
+
+    .features__item__1{
+
+        margin-top: 15px;    
+    }
+
+    .form__text{
+
+        padding: 0px 0px 0px 50px;
+        margin-bottom: 50px;
+    }
 }

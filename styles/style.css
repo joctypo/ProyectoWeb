@@ -101,12 +101,13 @@ body {
     margin-left: 100px;
     display: flex;
     margin-top: 15px;
+    background: whitesmoke;
 }
 
 .aboutus{
-    top: 0;
+    
     display: flex;
-    justify-content: space-between;
+    align-items: center;
     
 }
 
@@ -139,9 +140,9 @@ body {
 
 }
 .aboutus__block{
-    display: block;
+    align-items: center;
     width: 100%;
-    padding: 200px 100px;
+    padding: 0px 100px;
 }
 
 .aboutus__block__tittle{
@@ -167,13 +168,30 @@ body {
 .meetus{
     width: 100%;
     display: flex;
-
+    justify-content: center;
+    align-items: center;
+    position: relative;
 }
 
 .meetus__image{
+    width: 100%;  
+    z-index: 1;
+    
 
-    width: 100%;
- 
+}
+
+.meetus__simbol{
+    position: absolute;
+    z-index: 5;    
+    right: 0PX;
+    bottom: -100px;
+}
+
+.meetus__clients{
+
+    position: absolute;
+    z-index: 5;    
+    top: 350px;
 
 }
 

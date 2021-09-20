@@ -19,7 +19,7 @@ body {
     left: 0;
     z-index: 20;
     text-align: center;
-    padding: 35px;
+    padding: 15px;
     display: flex;
     justify-content: space-between;
 
@@ -34,7 +34,7 @@ body {
 .nav li{
     
     display: inline-block;
-    padding: 10px 20px 5px 0;
+    padding: 30px 20px 5px 0;
     
     
 }

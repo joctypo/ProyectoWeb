@@ -104,6 +104,28 @@ body {
     background: whitesmoke;
 }
 
+.form__button{
+    font-family: 'Dela Gothic One', cursive;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    color: #4B3E35;
+    width:fit-content;
+    border: 2.67816px solid #EE1542;
+    padding: 5px 30px;
+    border-radius: 4.01724px;
+    text-decoration: none;
+    display: flex;
+    margin-top: 15px;
+    background: whitesmoke;
+
+}
+
+.form__buttonfinale{
+    display: flex;
+    justify-content: end;
+
+}
+
 .aboutus{
     
     display: flex;
@@ -217,7 +239,7 @@ body {
 .form{
     width: 100%;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     
 }
 

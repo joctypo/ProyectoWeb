@@ -59,7 +59,7 @@ body {
     letter-spacing: 0.8px;
     text-transform: uppercase;
     color: #4B3E35;
-
+    position: relative;
 }
 
 .banner__photo{

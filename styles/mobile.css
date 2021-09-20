@@ -1,7 +1,44 @@
 @media all and (max-width:1024px) {
  .nav {
      flex-direction: column;
+     padding: 35px 0px;
+     justify-content: center;
  }
+
+ .footer__block{
+    padding: 50px;
+
+}
+
+.footer__text{
+    padding: 50px;
+}
+
+.nav_list{
+    margin-right: 0px;
+}
+
+.banner{
+
+    height: 50%;
+}
+
+
+.meetus__clients{
+ 
+    top: 200px;
+
+}
+
+.simbolfinal1{
+    display: none;
+}
+
+.simbolfinal2{
+    display: none;
+}
+
+
 }
 
 @media all and (max-width: 768px) {

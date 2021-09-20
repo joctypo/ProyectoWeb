@@ -218,7 +218,7 @@ body {
 }
 
 .brands{
-    width: 1100px;
+    width: 1024px;
     display: flex;
     justify-content: center;
     margin-top: 35px;
@@ -240,7 +240,7 @@ body {
     width: 100%;
     display: flex;
     align-items: flex-start;
-    
+    position: relative;
 }
 
 .form__image{
@@ -317,5 +317,50 @@ h2{
     margin-left: -20px;
 
 
+}
+
+.block__absolut{
+    position: relative;
+    display: flex;
+    width: 100%;
+
+}
+
+.simbolfinal1{
+    position: absolute;
+    z-index: 20;
+    right: 0px;
+    bottom: -400px;
+   
+}
+
+.simbolfinal2{
+    position: absolute;
+    z-index: 20;
+    left: 0px;
+    bottom: -200px;
+}
+
+.footer{
+    position: relative;
+    background: whitesmoke;
+    display: flex;
+    z-index: 18;
+    width: 100%;
+    justify-content: center;
+
+}
+
+.footer__block{
+    padding: 150px;
+
+}
+
+.footer__text{
+    padding: 150px;
+}
+
+.list{
+    list-style: none;
 }
 

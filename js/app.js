@@ -133,6 +133,9 @@ const productTemplate = (item) => {
         buttonHtml = `<button class="product__cart">Añadir al carrito</button>`;
     }  
 
+    const thumbnailImage = "https://user-images.githubusercontent.com/101482/29592647-40da86ca-875a-11e7-8bc3-941700b0a323.png";
+
+
     product.innerHTML = `
                  <img src="${item.image}" alt="camiseta" class="product__image">
                 <div class="product__description">
@@ -158,6 +161,12 @@ const productTemplate = (item) => {
         }
         cart.push(productAdded);
 
+        
+        if (userLogged) {
+            addProductsToCart(cart);
+        }
+
+        localStorage.setItem("cart", JSON.stringify(cart));
 
 
         productCart.setAttribute("disabled", true);
@@ -204,3 +213,21 @@ orderBySelect.addEventListener("change", e => {
 });
 
 
+const user = {
+    name: "Oscar Giraldo",
+    email: "oscargiraldop1999@gmail.com"
+}
+
+localStorage.setItem("user", JSON.stringify(user));
+
+onAuthStateChanged(auth, async (user) => {
+    if (user) {
+        const result = await getFirebaseCart(user.uid);
+        cart = result.products;
+        userLogged = user;
+    } else {
+        cart = getMyCart();
+    }
+
+    getAllProducts();
+});

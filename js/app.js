@@ -1,4 +1,12 @@
-const products = [
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.3.0/firebase-app.js";
+import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.3.0/firebase-auth.js";
+import { getFirestore, collection, getDocs, doc, getDoc, setDoc } from "https://www.gstatic.com/firebasejs/9.3.0/firebase-firestore.js";
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth();
+const db = getFirestore(app);
+
+let products = [
     {
         id: 1, 
         name: "Camiseta",
@@ -56,7 +64,13 @@ const products = [
     }
 ];
 
-const cart = [];
+let userLogged = null;
+let cart = [];
+
+
+
+
+
 const productsSection = document.getElementById("products");
 
 const productTemplate = (item) => {

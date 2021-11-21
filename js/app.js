@@ -84,7 +84,7 @@ const productTemplate = (item) => {
                  <img src="${item.image}" alt="camiseta" class="product__image">
                 <div class="product__description">
                         ${tagHtml}
-                       <h2 class="product__price">${item.price}</h2>
+                       <h2 class="product__price">$ ${item.price}</h2>
                        <h3 class="product__name">${item.name}</h3>
                         ${buttonHtml}
 

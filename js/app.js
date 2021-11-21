@@ -5,6 +5,8 @@ import { getFirestore, collection, getDocs, doc, getDoc, setDoc } from "https://
 const app = initializeApp(firebaseConfig);
 const auth = getAuth();
 const db = getFirestore(app);
+
+let products = [];
 let userLogged = null;
 let cart = [];
 
@@ -51,6 +53,7 @@ const addProductsToCart = async (products) => {
 const productsSection = document.getElementById("products");
 
 const productTemplate = (item) => {
+
     const product = document.createElement("a");
     product.className= "product";
     product.setAttribute("href",`./pageproduct.html?id=${item.id}`)
@@ -61,10 +64,10 @@ const productTemplate = (item) => {
     if(item.isRecommended===true){
         tagHtml = '<span class="product__tag">Recomendado</span>'
 
-    } else{tagHtml = ''
+    } else{tagHtml = ""
     }
 
-    const isAdded = cart.some(product => product.id === item.id);
+    const isAdded = cart.some(productCart => productCart.id === item.id);
     
     let buttonHtml;
 
@@ -93,13 +96,16 @@ const productTemplate = (item) => {
 
     productCartButton.addEventListener("click", e => { 
         e.preventDefault();
+
         alert("Product Added!");
+
         const productAdded = {
             id: item.id,
             name : item.name,
             image: item.image,
             price: item.price
         }
+
         cart.push(productAdded);
 
         
@@ -110,7 +116,7 @@ const productTemplate = (item) => {
         localStorage.setItem("cart", JSON.stringify(cart));
 
 
-        productCart.setAttribute("disabled", true);
+        productCartButton.setAttribute("disabled", true);
     })
 };
 

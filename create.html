@@ -4,9 +4,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Creador de productos</title>
+    <link rel="stylesheet" href="./styles/styles.css">
+    <link rel="stylesheet" href="./styles/mobile.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Roboto:wght@300&display=swap" rel="stylesheet">
+
+
 </head>
 <body>
+    <header>
+        <nav class="nav">
+            <a href="#"><img class="nav_logo" src="./images/Logo.svg" alt="Logo el tintero"></a>
+            <ul class="nav_list" >
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#about">Nosotros</a></li>
+                <li><a href="#work">Trabajos</a></li>
+                <li><a href="./shop.html">Tienda</a></li>
+                <li><a href="#contactus">Contáctenos</a></li>
+               
+            </ul>
+        </nav>
+    </header>
+
     <form id="createProduct">
         <h1>Añade un nuevo producto</h1>
         <input type="text" name="name" placeholder="Nombre del producto">
@@ -37,6 +59,20 @@
         <input class="create__button" type="submit" value="Agregar producto" id="submitButton">
         <p id="feedback"></p>
     </form>
+
+    <footer class="footer">
+        <div class="footer__block">
+            <img class="footer__block__image" src="./images/Logo.svg">
+        </div>
+        <div class="footer__text">
+            <h2>Contáctanos</h2>
+            <ul>
+                <li class="list">Oscar Eduardo Giraldo</li>
+                <li class="list">3182953861</li>
+                <li class="list">oscargiraldop1999@gmail.com</li>
+            </ul>
+        </div>
+    </footer>
 
     <script src="./js/utils.js"></script>
     <script type="module" src="./js/create-product.js"></script>

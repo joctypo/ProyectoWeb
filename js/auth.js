@@ -128,8 +128,9 @@ onAuthStateChanged(auth, (user) => {
     if (user) {
         loginForm.classList.add("hidden");
         logoutButton.classList.add("visible");
-        const userInfo =user.uid;
-
+        const { user } = await signInWithEmailAndPassword(auth, email, password);
+        const userInfo = await getUserInfo(user.uid);
+    
         if (userInfo.isAdmin === true) {
             creatorr.classList.add("hidden");
             console.log("entramos"+userInfo.isAdmin);

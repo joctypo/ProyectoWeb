@@ -35,6 +35,17 @@ const login = async (email, password) => {
         
         console.log(userInfo);
 
+        if (userInfo.isAdmin === true) {
+            creatorr.classList.add("hidden");
+            console.log("entramos"+userInfo.isAdmin);
+            creatorr.classList.add("visible");
+        } else {
+            creatorr.classList.remove("hidden");
+            creatorr.classList.remove("visible");
+            console.log(" No entramos entramos"+userInfo.isAdmin);
+        }
+
+
     } catch (e) {
         if (e.code === "auth/user-not-found") {
             console.log("Este usuario no existe en nuestra base de datos");
@@ -124,25 +135,3 @@ onAuthStateChanged(auth, (user) => {
     }
 });
 
-onAuthStateChanged(auth, (user) => {
-    if (user) {
-        loginForm.classList.add("hidden");
-        logoutButton.classList.add("visible");
-        const { user } = await signInWithEmailAndPassword(auth, email, password);
-        const userInfo = await getUserInfo(user.uid);
-    
-        if (userInfo.isAdmin === true) {
-            creatorr.classList.add("hidden");
-            console.log("entramos"+userInfo.isAdmin);
-            creatorr.classList.add("visible");
-        } else {
-            creatorr.classList.remove("hidden");
-            creatorr.classList.remove("visible");
-            console.log(" No entramos entramos"+userInfo.isAdmin);
-        }
-
-    } else {
-        loginForm.classList.remove("hidden");
-        logoutButton.classList.remove("visible");
-    }
-});

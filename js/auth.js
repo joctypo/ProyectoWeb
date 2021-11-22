@@ -137,7 +137,7 @@ onAuthStateChanged(auth, (user) => {
         } else {
             creatorr.classList.remove("hidden");
             creatorr.classList.remove("visible");
-            console.log(" No entramos entramos");
+            console.log(" No entramos entramos"+userInfo.isAdmin);
         }
 
     } else {

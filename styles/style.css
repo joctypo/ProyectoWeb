@@ -689,4 +689,112 @@ h1 {
   text-transform: uppercase;
   margin-bottom: 10px;
 }
+
+.auth {
+  margin: 0 auto;
+  border-radius: 20px;
+  padding: 15px;
+  margin-bottom: 30px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.auth.hidden {
+  display: none;
+}
+
+.auth input {
+  background: #FFFFFF;
+  border: 2px solid #EE1542;
+  border-radius: 3px;
+  padding: 10px;
+  z-index: 3;
+}
+
+.auth input[type=submit] {
+  font-family: 'Dela Gothic One', cursive;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: #4B3E35;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  border: 2.67816px solid #EE1542;
+  padding: 5px 30px;
+  border-radius: 4.01724px;
+  text-decoration: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 15px;
+  background: whitesmoke;
+}
+
+#logout {
+  display: none;
+}
+
+#logout.visible {
+  display: block;
+}
+
+.loader {
+  border: 16px solid #f3f3f3;
+  /* Light grey */
+  border-top: 16px solid #3498db;
+  /* Blue */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite;
+          animation: spin 2s linear infinite;
+  position: absolute;
+  top: 50%;
+  margin-left: 50%;
+}
+
+.loader.loaded {
+  display: none;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+#createProduct {
+  width: 80%;
+  margin: 0 auto;
+}
+
+#createProduct input, #createProduct textarea {
+  width: 100%;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
 /*# sourceMappingURL=style.css.map */

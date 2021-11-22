@@ -8,14 +8,34 @@
 }
 
 .filters{
-
-    margin-top: 8em;
-    margin: 20px 0;
-    background-color: #9191916d;
+    background-color: #4B3E35;
     padding: 20px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
+    color: white;
+}
+.product__addToCart{
+    font-family: 'Dela Gothic One', cursive;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    color: #4B3E35;
+    margin: 10px 0px;
+    padding: 5px 0px;
+    width: fit-content;
+    border: 2.67816px solid #EE1542;
+    border-radius: 4.01724px;
+    padding: 5px;
+    text-decoration: none;
+    color: #4B3E35;
+    display: flex;
+    background: whitesmoke;
+
+    &:disabled{
+        background-color: gray;
+        color: white;
+    }
+
 
 }
 .product {
@@ -26,6 +46,7 @@
     border-radius: 10px;
     margin: 0 20px;
     margin-top: 2em;
+    margin-bottom: 2em;
     &__image {
 
         width: 100%;
@@ -37,6 +58,10 @@
     &__description {
         padding: 10px 15px;
         color: #4B3E35;
+        display: flex;
+        align-content: center;
+        flex-direction: column;
+        justify-content: center;
     }
 
     &__tag {
@@ -51,6 +76,7 @@
     &__price{
 
         padding: 10px 0px;
+
     }
 
     &__name{
@@ -83,6 +109,53 @@
     }
 
 
+}
+
+.product__item {
+    width: 80%;
+    margin: 0 auto;
+    display: none;
+
+    &.loaded {
+        display: flex;
+    }
+
+    .product__image{
+        width: 50%;
+        border: none;
+        height: 500px;
+    }
+
+    .product__description {
+        width: 50%;
+    }
+
+    .product__name {
+        font-size: 3em;
+    }
+
+    .product__mainImage {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    .product__colors {
+        display: block;
+    }
+
+    #gallery {
+        div {
+            width: 200px;
+            display: flex;
+            align-items: center;
+
+            img {
+                width: 100%;
+                cursor: pointer;
+            }
+        }
+    }
 }
 
 
@@ -467,6 +540,28 @@ h2{
 
 .list{
     list-style: none;
+}
+
+.selection{
+    background: #FFFFFF;
+    border: 2px solid #EE1542;
+    border-radius: 3px;
+    padding: 10px;
+    z-index: 3;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    overflow-x: hidden;
+
+}
+
+h1{   font-family: Dela Gothic One;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36.9667px;
+    line-height: 38px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
 }
 
 

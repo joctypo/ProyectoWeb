@@ -5,33 +5,88 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/mobile.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Roboto:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
-
-
-    <form id="register" class="auth">
-        <h1>¡Regístrate!</h1>
-        <input type="text" placeholder="Nombre completo" name="name">
-        <input type="email" placeholder="Correo electrónico" name="email">
-        <input type="password" placeholder="Contraseña" name="password">
-        <input type="text" placeholder="Ciudad" name="city">
-        <input type="text" placeholder="Dirección" name="address">
-
-        <input type="submit" value="Registrarme">
-    </form>
-
-    <form id="login" class="auth">
-        <h1>Inicia sesión</h1>
-        <input type="email" placeholder="Correo electrónico" name="email">
-        <input type="password" placeholder="Contraseña" name="password">
-        <input type="submit" value="Iniciar sesión">
-    </form>
-
-    <button id="logout">Cerrar sesión</button>
-
-    <button id="google">Iniciar sesión con Google</button>
-
+    <header>
+        <nav class="nav">
+            <a href="#"><img class="nav_logo" src="./images/Logo.svg" alt="Logo el tintero"></a>
+            <ul class="nav_list" >
+                <li><a href="./index.html">Inicio</a></li>
+                <li><a href="./index.html">Nosotros</a></li>
+                <li><a href="./index.html">Trabajos</a></li>
+                <li><a href="./shop.html">Tienda</a></li>
+                <li><a href="./index.html">Contáctenos</a></li>
+                <li><a href="./login.html">Ingresar</a></li>
+               
+            </ul>
+        </nav>
+    </header>
     
+    <div class="form3">
+    <div class="form2">
+        <form id="register" class="form__text2">
+            <h2>¡Regístrate!</h2>
+            <label class="formlabel">Nombre Completo</label>
+            <input type="text" class="form__text__item" placeholder="Nombre completo" name="name">
+            <label class="formlabel">Correo electrónico</label>
+            <input type="email" class="form__text__item" placeholder="Correo electrónico" name="email">
+            <label class="formlabel">Contraseña</label>
+            <input type="password" class="form__text__item" placeholder="Contraseña" name="password">
+            <label class="formlabel">Ciudad</label>
+            <input type="text" class="form__text__item" placeholder="Ciudad" name="city">
+            <label class="formlabel">Dirección</label>
+            <input type="text" class="form__text__item" placeholder="Dirección" name="address">
+            <div class="form__buttonfinale">
+                <input type="submit" class="form__button" value="Registrarme">
+            </div>
+           
+        </form>
+    
+        <form id="login" class="form__text2">
+            <h2>Inicia sesión</h2>
+            <label class="formlabel">Correo electrónico</label>
+            <input type="email" class="form__text__item" placeholder="Correo electrónico" name="email">
+            <label class="formlabel">Contraseña</label>
+            <input type="password" class="form__text__item" placeholder="Contraseña" name="password">
+            <div class="form__buttonfinale">
+                <input type="submit" class="form__button" value="Iniciar sesión">
+            </div>
+           
+        </form>
+        
+        <div class="form__buttonfinale">
+            <button id="logout" class="form__button">Cerrar sesión</button>
+    
+            <button id="google" class="form__button">Iniciar sesión con Google</button>
+
+        </div>
+       
+    </div>
+
+        <div class="form__image">
+        <img class="images" src="./images/copaform.png" alt="copa con cafe">
+         </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer__block">
+            <img class="footer__block__image" src="./images/Logo.svg">
+        </div>
+        <div class="footer__text">
+            <h2>Contáctanos</h2>
+            <ul>
+                <li class="list">Oscar Eduardo Giraldo</li>
+                <li class="list">3182953861</li>
+                <li class="list">oscargiraldop1999@gmail.com</li>
+            </ul>
+        </div>
+    </footer>
 
 
     <script src="./js/utils.js"></script>

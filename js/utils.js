@@ -5,7 +5,7 @@ const firebaseConfig = {
     storageBucket: "carrito-365f8.appspot.com",
     messagingSenderId: "232745723085",
     appId: "1:232745723085:web:896fe2481d39b9f9ac3584",
-    measurementId: "G-XTD0Y8BCCF"
+    
   };
 
   const formatCurrency = (price) => {

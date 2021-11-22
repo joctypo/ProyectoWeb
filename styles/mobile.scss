@@ -1,0 +1,256 @@
+@media all and (max-width:1024px) {
+    .nav {
+        flex-direction: column;
+        padding: 35px 0px;
+        justify-content: center;
+        
+    }
+
+    .products{
+        width: auto;
+        margin: 0px 0px 0px 0px;
+
+    }
+    .product{
+        &--cart{
+            height: auto;
+            flex-direction: column;
+       }
+    }
+    .footer__block{
+       padding: 50px;
+   
+   }
+   .banner__simbol{
+       display: none;
+   }
+   
+   .footer__text{
+       padding: 50px;
+   }
+   
+   .nav_list{
+       margin-right: 0px;
+   }
+   
+   .banner{
+   
+       height: 50%;
+   }
+   
+   
+   .meetus__clients{
+    
+       top: 200px;
+   
+   }
+   
+   .simbolfinal1{
+       display: none;
+   }
+   
+   .simbolfinal2{
+       display: none;
+   }
+   
+   .features1{
+       padding: 50px 0px;
+   }
+   
+ 
+   }
+   
+   @media all and (max-width: 768px) {
+       .brands {
+           width: 90%;
+          
+       }
+       .checkout__section{
+
+        flex-direction: column;
+                section{
+                    width: 100%;   
+
+                }
+       }
+       .products{
+           width: auto;
+           margin: 0px 0px 0px 0px;
+
+       }
+   
+       .brands div {
+           width: 50%;
+           
+       }
+       .form3{
+        justify-content: center;
+        margin-top: 10px;
+       }
+       .form2{
+           width: auto;
+           padding: 0px 0px 0px 0px;
+           align-content: center;
+       }
+       .banner{
+           height: 50%;
+       }
+       .form__image{
+           display: none;
+       }
+       
+       .banner__simbol{
+           display: none;
+       }
+       
+       .banner__absolute {
+           display: none;
+       }
+
+       
+       .brands{flex-direction: column;
+           align-items: flex-start;}
+       .banner__tittle {
+           background: #FFF;
+           padding: 20px 20px 20px 100px;
+           width: fit-content;
+           font-size: 25px;
+       }
+       
+       .aboutus{
+           display: flex;
+           flex-direction: column;
+       }
+       
+       .aboutus__block__imagen{
+           display: none;
+       }
+   
+       .aboutus__block {
+   
+           padding: 10px 50px;
+       }
+   
+       .aboutus__image__simbolplant {
+           display: none;
+       }
+   
+       .features{
+           flex-wrap: wrap;
+       }
+   
+       .meetus__simbol {
+           display: none;
+       }
+   
+       .features1{
+           flex-wrap: wrap;
+           padding: 30px 100px;
+       }
+   
+       .features__item__1{
+   
+           margin-top: 15px;    
+       }
+   
+       .form__text{
+   
+           padding: 16px 16px 16px 16px;
+           margin-bottom: 50px;
+       }
+
+       .footer{
+           flex-direction: column;
+       }
+       .form__image{
+        display: none;
+        }
+        .form__text{
+        width: 100%;
+        }
+        .product{
+            &--cart{
+                height: auto;
+                flex-direction: column;
+           }
+        }
+   }
+   
+   @media all and (max-width: 375px) {
+       .aboutus__image__simbolcoffe {
+           display: none;
+       }
+       .brands {
+           width: 90%;
+           flex-direction: column;
+           align-items: normal;
+       }
+   
+       .brands div {
+           width: 50%;
+       }
+   
+       .meetus__clients {
+           top: 100px;
+       }
+   
+       .form{
+           flex-direction: column-reverse;
+   
+       }
+   
+       .form__image {
+          
+           width: 100%;
+   
+       }
+   
+       .form__text{
+           width: 100%;
+           padding: 0px 16px 0px 16px;
+       }
+   
+       .footer{
+   
+           flex-direction: column;
+       }
+   
+       .images {
+           width: 100%;
+       }
+   
+       .banner{
+           height: 600px;
+   
+       }
+   
+       .banner__photo{
+           display: none;
+       }
+   
+       .banner__tittle {
+          
+           padding: 20px 20px 20px 20px;
+           text-align: center;
+     
+       }
+   
+       .banner__absolute{
+   
+           top:400px;
+       }
+   
+       .banner__simbol{
+           display: flex;
+           width: 50%;
+       }
+   
+       .aboutus{
+           flex-direction: column-reverse;
+       }
+   
+       .nav li {
+           
+           padding: 30px 10px 5px 10px;
+       }
+   }

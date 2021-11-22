@@ -100,7 +100,6 @@ loginForm.addEventListener("submit", e => {
 
     if (email && password) {
         login(email, password);
-        verfication(user)
     } else {
         console.log("completa todos los campos...");
     }
@@ -133,10 +132,12 @@ onAuthStateChanged(auth, (user) => {
 
         if (userInfo.isAdmin === true) {
             creatorr.classList.add("hidden");
+            console.log("entramos"+userInfo.isAdmin);
             creatorr.classList.add("visible");
         } else {
             creatorr.classList.remove("hidden");
             creatorr.classList.remove("visible");
+            console.log(" No entramos entramos");
         }
 
     } else {

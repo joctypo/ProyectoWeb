@@ -81,4 +81,33 @@ const createSelectColors = (colors) => {
 
 };
 
+
+const productCartButton = product.querySelector(".product__addToCart");
+
+productCartButton.addEventListener("click", e => { 
+    e.preventDefault();
+
+    alert("Product Added!");
+
+    const productAdded = {
+        id: item.id,
+        name : item.name,
+        image: item.image,
+        price: item.price
+    }
+
+    cart.push(productAdded);
+
+    
+    if (userLogged) {
+        addProductsToCart(cart);
+    }
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+
+    productCartButton.setAttribute("disabled", true);
+    
+})
+
 getProduct();

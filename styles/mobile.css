@@ -53,6 +53,12 @@
   .brands {
     width: 90%;
   }
+  .product__item.loaded {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
   .checkout__section {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;

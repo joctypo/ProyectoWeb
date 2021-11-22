@@ -170,14 +170,11 @@
 
     #gallery {
         div {
-            width: 200px;
-            display: flex;
-            align-items: center;
+            
+            display: none;
+            
 
-            img {
-                width: 100%;
-                cursor: pointer;
-            }
+           
         }
     }
 }

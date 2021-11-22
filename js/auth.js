@@ -34,6 +34,15 @@ const login = async (email, password) => {
         console.log(`Bienvenido ${userInfo.name}`);
         
         console.log(userInfo);
+
+        if (userInfo.isAdmin === true) {
+            creatorr.classList.add("hidden");
+            creatorr.classList.add("visible");
+        } else {
+            creatorr.classList.remove("hidden");
+            creatorr.classList.remove("visible");
+        }
+
     } catch (e) {
         if (e.code === "auth/user-not-found") {
             console.log("Este usuario no existe en nuestra base de datos");
@@ -99,6 +108,7 @@ loginForm.addEventListener("submit", e => {
 
     if (email && password) {
         login(email, password);
+        verfication(user)
     } else {
         console.log("completa todos los campos...");
     }
@@ -119,15 +129,5 @@ onAuthStateChanged(auth, (user) => {
     } else {
         loginForm.classList.remove("hidden");
         logoutButton.classList.remove("visible");
-    }
-});
-
-onAuthStateChanged(auth, (user) => {
-    if (user.isAdmin === true) {
-        creatorr.classList.add("hidden");
-        creatorr.classList.add("visible");
-    } else {
-        creatorr.classList.remove("hidden");
-        creatorr.classList.remove("visible");
     }
 });

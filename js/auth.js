@@ -129,7 +129,7 @@ onAuthStateChanged(auth, (user) => {
     if (user) {
         loginForm.classList.add("hidden");
         logoutButton.classList.add("visible");
-        const userInfo = await getUserInfo(user.uid);
+        const userInfo =user.uid;
 
         if (userInfo.isAdmin === true) {
             creatorr.classList.add("hidden");

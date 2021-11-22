@@ -9,7 +9,7 @@ const registerForm = document.getElementById("register");
 const loginForm = document.getElementById("login");
 const logoutButton = document.getElementById("logout");
 const googleButton = document.getElementById("google");
-
+const creatorr= document.getElementById("creatorr");
 
 const createUser = async (email, password, userFields) => {
     try {
@@ -119,5 +119,15 @@ onAuthStateChanged(auth, (user) => {
     } else {
         loginForm.classList.remove("hidden");
         logoutButton.classList.remove("visible");
+    }
+});
+
+onAuthStateChanged(auth, (user) => {
+    if (user.isAdmin === true) {
+        creatorr.classList.add("hidden");
+        creatorr.classList.add("visible");
+    } else {
+        creatorr.classList.remove("hidden");
+        creatorr.classList.remove("visible");
     }
 });

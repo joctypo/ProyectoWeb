@@ -687,3 +687,11 @@ h1{
         margin-bottom: 10px;
     }
 }
+
+#creatorr{
+    display: none;
+
+    &.visible {
+        display: block;
+    }
+}

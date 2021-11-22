@@ -37,12 +37,10 @@ const login = async (email, password) => {
 
         if (userInfo.isAdmin === true) {
             creatorr.classList.add("hidden");
-            console.log("entramos"+userInfo.isAdmin);
             creatorr.classList.add("visible");
         } else {
             creatorr.classList.remove("hidden");
             creatorr.classList.remove("visible");
-            console.log(" No entramos entramos"+userInfo.isAdmin);
         }
 
 

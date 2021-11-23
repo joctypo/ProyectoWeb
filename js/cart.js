@@ -25,7 +25,7 @@ const removeProduct = (productId) => {
     const newCart = cart.filter(product => product.id !== productId);
     localStorage.setItem("cart", JSON.stringify(newCart));
 
-    renderMyCart();
+   // renderMyCart();
 
 };
 
@@ -67,6 +67,7 @@ const renderProduct = (product) => {
     newProduct.addEventListener("click", e => {
         if (e.target.tagName === "BUTTON") {
             removeProduct(product.id);
+            deleteCart();
         }
     });
 

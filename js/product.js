@@ -1,8 +1,63 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.5.0/firebase-app.js";
-import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/9.5.0/firebase-firestore.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.3.0/firebase-app.js";
+import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.3.0/firebase-auth.js";
+import { getFirestore, collection, getDocs, doc, getDoc, setDoc } from "https://www.gstatic.com/firebasejs/9.3.0/firebase-firestore.js";
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
+const auth = getAuth();
+
+let products = [];
+let cart = [];
+let userLogged = null;
+
+onAuthStateChanged(auth, async (user) => {
+    if (user) {
+        const result = await getFirebaseCart(user.uid);
+        cart = result.products;
+        userLogged = user;
+    } else {
+        cart = getMyCart();
+    }
+
+    getAllProducts();
+});
+
+const getAllProducts = async() => {
+    const collectionRef = collection(db, "products");
+    const { docs } = await getDocs(collectionRef);
+
+    const firebaseProducts = docs.map((doc) => {
+        return {
+            ...doc.data(),
+            id: doc.id,
+        }
+    })
+
+    firebaseProducts.forEach(product => {
+      
+       //clickonbutt(product);
+    });
+    console.log(firebaseProducts);
+};
+
+
+const getFirebaseCart = async (userId) => {
+    const docRef = doc(db, "cart", userId);
+    const docSnap = await getDoc(docRef);
+    return docSnap.exists() ? docSnap.data() : {
+        products: []
+    }
+};
+
+const addProductsToCart = async (products) => {
+    console.log(products)
+    await setDoc(doc(db,"cart", userLogged.uid), {
+        products
+    });
+};
+
+
+
 
 const getProduct = async () => {
     const url = window.location.search;
@@ -16,7 +71,7 @@ const getProduct = async () => {
     productSection.classList.add("loaded");
     spinner.classList.add("loaded");
 
-    loadProductInfo(data);
+    loadProductInfo(data,productId);
 
 }
 
@@ -28,13 +83,41 @@ const productDescription = document.getElementById("productDescription");
 const productPrice = document.getElementById("productPrice");
 const productGallery = document.getElementById("gallery");
 const customContent = document.getElementById("customContent");
+const productCartButton = document.getElementById("addToCart");
 
-const loadProductInfo = (product) => {
+const loadProductInfo = (product,productID) => {
     productName.innerText = product.name;
     productDescription.innerText = product.description;
     productPrice.innerText = `${ formatCurrency(product.price) }`;
     productImage.setAttribute("src", product.image);
+    
+    
+    productCartButton.addEventListener("click", e => { 
+    e.preventDefault();
 
+    alert("Product Added!");
+
+    const productAdded = {
+        id: productID,
+        name : product.name,
+        image: product.image,
+        price: product.price
+    }
+    console.log(productAdded)
+    cart.push(productAdded);
+
+    
+    if (userLogged) {
+        addProductsToCart(cart);
+        console.log("agregó")
+    }
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+
+    productCartButton.setAttribute("disabled", true);  
+    })
+    
     if (product.images) {
         createGallery(product.image, product.images);
     }
@@ -82,32 +165,6 @@ const createSelectColors = (colors) => {
 };
 
 
-const productCartButton = product.querySelector(".product__addToCart");
 
-productCartButton.addEventListener("click", e => { 
-    e.preventDefault();
-
-    alert("Product Added!");
-
-    const productAdded = {
-        id: item.id,
-        name : item.name,
-        image: item.image,
-        price: item.price
-    }
-
-    cart.push(productAdded);
-
-    
-    if (userLogged) {
-        addProductsToCart(cart);
-    }
-
-    localStorage.setItem("cart", JSON.stringify(cart));
-
-
-    productCartButton.setAttribute("disabled", true);
-    
-})
 
 getProduct();

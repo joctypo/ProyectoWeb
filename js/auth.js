@@ -10,13 +10,12 @@ const registerForm = document.getElementById("register");
 const loginForm = document.getElementById("login");
 const logoutButton = document.getElementById("logout");
 const googleButton = document.getElementById("google");
-const creatorr= document.getElementById("creatorr");
+const creatorr = document.getElementById("creatorr");
 
 const createUser = async (email, password, userFields) => {
     try {
         const { user } = await createUserWithEmailAndPassword(auth, email, password);
         const userId = user.uid;
-
         await setDoc(doc(db, "users", userId), userFields);
     } catch (e) {
         if (e.code === "auth/email-already-in-use") {
@@ -32,18 +31,8 @@ const login = async (email, password) => {
     try {
         const { user } = await signInWithEmailAndPassword(auth, email, password);
         const userInfo = await getUserInfo(user.uid);
-        console.log(`Bienvenido ${userInfo.name}`);
-        
-        console.log(userInfo);
-
-      
-
-
-    } catch (e) {
-        if (e.code === "auth/user-not-found") {
-            console.log("Este usuario no existe en nuestra base de datos");
-        }
-    }
+        alert("Ingresó con éxito");
+    } catch (e) { }
 }
 
 const getUserInfo = async (userId) => {
@@ -51,28 +40,21 @@ const getUserInfo = async (userId) => {
         const docRef = doc(db, "users", userId);
         const docSnap = await getDoc(docRef);
         return docSnap.data();
-    } catch (e) {
-        console.log(e);
-    }
-
+    } catch (e) { }
 }
 
 const loginWithFacebook = async () => {
     const provider = new GoogleAuthProvider();
     const result = await signInWithPopup(auth, provider);
     const user = result.user;
-
     const userInfo = await getUserInfo(user.uid);
-
-    console.log(`Bienvenido ${userInfo.name}`);
 };
 
 const logout = async () => {
     try {
         await signOut(auth);
-    } catch (e) {
-        console.log(e);
-    }
+        alert("Salió con éxito");
+    } catch (e) { }
 }
 
 registerForm.addEventListener("submit", e => {
@@ -90,12 +72,9 @@ registerForm.addEventListener("submit", e => {
             address,
             isAdmin: false,
         });
-    } else {
-        console.log("Completa todos los campos...");
-    }
+    } else { }
 
 });
-
 
 loginForm.addEventListener("submit", e => {
     e.preventDefault();
@@ -104,9 +83,7 @@ loginForm.addEventListener("submit", e => {
 
     if (email && password) {
         login(email, password);
-    } else {
-        console.log("completa todos los campos...");
-    }
+    } else { }
 });
 
 googleButton.addEventListener("click", e => {
@@ -121,9 +98,7 @@ onAuthStateChanged(auth, (user) => {
     if (user) {
         loginForm.classList.add("hidden");
         logoutButton.classList.add("visible");
-        
     } else {
-        
         loginForm.classList.remove("hidden");
         logoutButton.classList.remove("visible");
     }

@@ -19,9 +19,7 @@ const uploadMainImage = async (file) => {
     try {
         const image = await imageUploadedReference(file);
         return getDownloadURL(ref(storage, image.ref.fullPath));
-    } catch (e) {
-        console.log(e);
-    }
+    } catch (e) { }
 };
 
 const uploadGallery = async (files) => {
@@ -32,7 +30,6 @@ const uploadGallery = async (files) => {
     });
 
     return images;
-
 }
 
 const createProduct = async () => {
@@ -42,11 +39,11 @@ const createProduct = async () => {
     const type = createProductForm.type.value;
     const mainImage = createProductForm.image.files[0];
     const gallery = createProductForm.gallery.files;
-    
+
     if (name && price && description && type && mainImage) {
         feedback.innerText = "Subiendo el producto...";
         try {
-            
+
             const urlMainImage = await uploadMainImage(mainImage);
             let galleryImages = [];
 
@@ -71,7 +68,7 @@ const createProduct = async () => {
             feedback.innerText = "¡algo salió mal!";
         }
     } else {
-        console.log("Completa todos los campos...");
+        alert("Completa todos los campos...");
     }
 };
 

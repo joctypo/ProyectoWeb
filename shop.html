@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,17 +8,19 @@
     <title>Tienda</title>
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="stylesheet" href="./styles/mobile.css">
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet"href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
-    <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Roboto:wght@300&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
     <header>
         <nav class="nav">
             <a href="#"><img class="nav_logo" src="./images/Logo.svg" alt="Logo el tintero"></a>
-            <ul class="nav_list" >
+            <ul class="nav_list">
                 <li><a href="./index.html">Inicio</a></li>
                 <li><a href="#">Tienda</a></li>
                 <li id="creatorr"><a href="./create.html">Nuevo Producto</a></li>
@@ -25,51 +28,52 @@
                 <li><a href="./cart.html">Mi Carrito</a></li>
             </ul>
         </nav>
-        </header>
+    </header>
 
 
-        <div class="filters">
-            <div>
-                <label for="categories">Filtrar por:</label>
-                <select name="categories" id="categories" class="selection">
-                    <option value="">Todos los productos</option>
-                    <option value="camisetas">Camisetas</option>
-                    <option value="pocillos">Pocillos</option>
-                    <option value="gorras">Gorras</option>
-                    <option value="memorias">Memorias</option>
-                    <option value="accesories">Accesorios</option>
-                </select>
-            </div>
-    
-            <div>
-                <label for="orderBy">Ordenar por:</label>
-                <select name="orderBy" id="orderBy" class="selection">
-                    <option value="">Selecciona una opción</option>
-                    <option value="asc">Precio: De menor a mayor</option>
-                    <option value="desc">Precio: De mayor a menor</option>
-                </select>
-            </div>
+    <div class="filters">
+        <div>
+            <label for="categories">Filtrar por:</label>
+            <select name="categories" id="categories" class="selection">
+                <option value="">Todos los productos</option>
+                <option value="camisetas">Camisetas</option>
+                <option value="pocillos">Pocillos</option>
+                <option value="gorras">Gorras</option>
+                <option value="memorias">Memorias</option>
+                <option value="accesories">Accesorios</option>
+            </select>
         </div>
 
-        <div class="products" id="products"></div>
+        <div>
+            <label for="orderBy">Ordenar por:</label>
+            <select name="orderBy" id="orderBy" class="selection">
+                <option value="">Selecciona una opción</option>
+                <option value="asc">Precio: De menor a mayor</option>
+                <option value="desc">Precio: De mayor a menor</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="products" id="products"></div>
 
 
-        <footer class="footer">
-            <div class="footer__block">
-                <img class="footer__block__image" src="./images/Logo.svg">
-            </div>
-            <div class="footer__text">
-                <h2>Contáctanos</h2>
-                <ul>
-                    <li class="list">Oscar Eduardo Giraldo</li>
-                    <li class="list">3182953861</li>
-                    <li class="list">oscargiraldop1999@gmail.com</li>
-                </ul>
-            </div>
-        </footer>
+    <footer class="footer">
+        <div class="footer__block">
+            <img class="footer__block__image" src="./images/Logo.svg">
+        </div>
+        <div class="footer__text">
+            <h2>Contáctanos</h2>
+            <ul>
+                <li class="list">Oscar Eduardo Giraldo</li>
+                <li class="list">3182953861</li>
+                <li class="list">oscargiraldop1999@gmail.com</li>
+            </ul>
+        </div>
+    </footer>
 
-        <script src="./js/utils.js"></script>
-        <script type="module" src="./js/admin.js"></script>
-        <script type="module" src="./js/app.js"></script>
+    <script src="./js/utils.js"></script>
+    <script type="module" src="./js/admin.js"></script>
+    <script type="module" src="./js/app.js"></script>
 </body>
+
 </html>

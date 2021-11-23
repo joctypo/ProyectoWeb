@@ -24,9 +24,6 @@ const removeProduct = (productId) => {
     const cart = getMyCart();
     const newCart = cart.filter(product => product.id !== productId);
     localStorage.setItem("cart", JSON.stringify(newCart));
-
-   // renderMyCart();
-
 };
 
 const getFirebaseCart = async (userId) => {
@@ -42,9 +39,7 @@ const getUserInfo = async (userId) => {
         const docRef = doc(db, "users", userId);
         const docSnap = await getDoc(docRef);
         return docSnap.data();
-    } catch (e) {
-        console.log(e);
-    }
+    } catch (e) { }
 }
 
 
@@ -89,16 +84,13 @@ const deleteCart = async () => {
     try {
         await deleteDoc(doc(db, "cart", userLogged.uid));
         renderMyCart([]);
-        console.log("Carrito de compras actualizado...");
-    } catch(e) {
-        console.log(e);
-    }
+    } catch (e) { }
 };
 
 const createOrder = async (userFields) => {
     try {
         const order = await addDoc(collection(db, "orders"), {
-            ...userFields, 
+            ...userFields,
             products: cart,
             total,
             email: userLogged.email,
@@ -107,9 +99,7 @@ const createOrder = async (userFields) => {
         alert(`Muchas gracias, tu pedido con ID: ${order.id} ha quedado registrado.`);
 
         deleteCart();
-    } catch (e) {
-        console.log(e)
-    }
+    } catch (e) { }
 };
 
 autocompleteFields.addEventListener("click", e => {

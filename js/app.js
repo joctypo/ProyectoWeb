@@ -10,7 +10,7 @@ let products = [];
 let userLogged = null;
 let cart = [];
 
-const getAllProducts = async() => {
+const getAllProducts = async () => {
     const collectionRef = collection(db, "products");
     const { docs } = await getDocs(collectionRef);
 
@@ -20,14 +20,9 @@ const getAllProducts = async() => {
             id: doc.id,
         }
     })
-
-    console.log(firebaseProducts);
-
     firebaseProducts.forEach(product => {
-      
         productTemplate(product);
     });
-
     products = firebaseProducts;
 };
 
@@ -55,31 +50,29 @@ const productsSection = document.getElementById("products");
 const productTemplate = (item) => {
 
     const product = document.createElement("a");
-    product.className= "product";
-    product.setAttribute("href",`./pageproduct.html?id=${item.id}`)
+    product.className = "product";
+    product.setAttribute("href", `./pageproduct.html?id=${item.id}`)
     product.setAttribute("target", `_blank`);
 
     let tagHtml;
 
-    if(item.isRecommended===true){
+    if (item.isRecommended === true) {
         tagHtml = '<span class="product__tag">Recomendado</span>'
 
-    } else{tagHtml = ""
+    } else {
+        tagHtml = ""
     }
 
     const isAdded = cart.some(productCart => productCart.id === item.id);
-    
+
     let buttonHtml;
 
     if (isAdded) {
         buttonHtml = `<button class="product__cart" disabled>Producto añadido</button>`
     } else {
         buttonHtml = `<button class="product__cart">Añadir al carrito</button>`;
-    }  
-
+    }
     const thumbnailImage = "https://user-images.githubusercontent.com/101482/29592647-40da86ca-875a-11e7-8bc3-941700b0a323.png";
-
-
     product.innerHTML = `
                  <img src="${item.image}" alt="camiseta" class="product__image">
                 <div class="product__description">
@@ -94,27 +87,23 @@ const productTemplate = (item) => {
 
     const productCartButton = product.querySelector(".product__cart");
 
-    productCartButton.addEventListener("click", e => { 
+    productCartButton.addEventListener("click", e => {
         e.preventDefault();
-
-        alert("Product Added!");
-
+        alert("Producto añadido!");
         const productAdded = {
             id: item.id,
-            name : item.name,
+            name: item.name,
             image: item.image,
             price: item.price
         }
 
         cart.push(productAdded);
 
-        
         if (userLogged) {
             addProductsToCart(cart);
         }
 
         localStorage.setItem("cart", JSON.stringify(cart));
-
 
         productCartButton.setAttribute("disabled", true);
     })
@@ -145,7 +134,7 @@ const loadProducts = () => {
     if (order === "desc") {
         filteredProductsByCategory = filteredProductsByCategory.sort((a, b) => b.price - a.price);
     }
-    
+
     filteredProductsByCategory.forEach(product => {
         productTemplate(product);
     });
@@ -175,7 +164,6 @@ onAuthStateChanged(auth, async (user) => {
     } else {
         cart = getMyCart();
     }
-
     getAllProducts();
 });
 

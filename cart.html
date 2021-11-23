@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,22 +10,24 @@
     <link rel="stylesheet" href="./styles/mobile.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet"href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
-    <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Roboto:wght@300&display=swap"
+        rel="stylesheet">
 
 
 </head>
+
 <body>
     <header>
         <nav class="nav">
             <a href="#"><img class="nav_logo" src="./images/Logo.svg" alt="Logo el tintero"></a>
-            <ul class="nav_list" >
+            <ul class="nav_list">
                 <li><a href="./index.html">Inicio</a></li>
                 <li><a href="./shop.html">Tienda</a></li>
                 <li id="creatorr"><a href="./create.html">Nuevo Producto</a></li>
                 <li><a href="./login.html">Ingresar</a></li>
                 <li><a href="#">Mi Carrito</a></li>
-               
+
             </ul>
         </nav>
     </header>
@@ -36,9 +39,9 @@
             <ul class="products" id="cart"></ul>
             <h3 class="total" id="total"></h3>
         </section>
-        <section >
+        <section>
             <button class="product__addToCart" id="autofill">Usar mismos datos del usuario</button>
-            <form id="checkout" >
+            <form id="checkout">
                 <label class="formlabel">Nombre Completo</label>
                 <input type="text" class="form__text__item" name="name" placeholder="Nombre completo">
                 <label class="formlabel">Ciudad</label>
@@ -71,4 +74,5 @@
     <script type="module" src="./js/admin.js"></script>
     <script type="module" src="./js/cart.js"></script>
 </body>
+
 </html>

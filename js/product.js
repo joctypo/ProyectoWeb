@@ -10,70 +10,7 @@ let products = [];
 let cart = [];
 let userLogged = null;
 
-onAuthStateChanged(auth, async (user) => {
-    if (user) {
-        const result = await getFirebaseCart(user.uid);
-        cart = result.products;
-        userLogged = user;
-    } else {
-        cart = getMyCart();
-    }
 
-    getAllProducts();
-});
-
-const getAllProducts = async() => {
-    const collectionRef = collection(db, "products");
-    const { docs } = await getDocs(collectionRef);
-
-    const firebaseProducts = docs.map((doc) => {
-        return {
-            ...doc.data(),
-            id: doc.id,
-        }
-    })
-
-    firebaseProducts.forEach(product => {
-      
-       //clickonbutt(product);
-    });
-    console.log(firebaseProducts);
-};
-
-
-const getFirebaseCart = async (userId) => {
-    const docRef = doc(db, "cart", userId);
-    const docSnap = await getDoc(docRef);
-    return docSnap.exists() ? docSnap.data() : {
-        products: []
-    }
-};
-
-const addProductsToCart = async (products) => {
-    console.log(products)
-    await setDoc(doc(db,"cart", userLogged.uid), {
-        products
-    });
-};
-
-
-
-
-const getProduct = async () => {
-    const url = window.location.search;
-    const searchParams = new URLSearchParams(url);
-    const productId = searchParams.get("id");
-
-    const docRef = doc(db, "products", productId);
-    const docSnap = await getDoc(docRef);
-    const data = docSnap.data();
-
-    productSection.classList.add("loaded");
-    spinner.classList.add("loaded");
-
-    loadProductInfo(data,productId);
-
-}
 
 const productSection = document.getElementById("product");
 const spinner = document.getElementById("spinner");
@@ -164,7 +101,70 @@ const createSelectColors = (colors) => {
 
 };
 
+onAuthStateChanged(auth, async (user) => {
+    if (user) {
+        const result = await getFirebaseCart(user.uid);
+        cart = result.products;
+        userLogged = user;
+    } else {
+        cart = getMyCart();
+    }
 
+    getAllProducts();
+});
+
+const getAllProducts = async() => {
+    const collectionRef = collection(db, "products");
+    const { docs } = await getDocs(collectionRef);
+
+    const firebaseProducts = docs.map((doc) => {
+        return {
+            ...doc.data(),
+            id: doc.id,
+        }
+    })
+
+    firebaseProducts.forEach(product => {
+      
+       //clickonbutt(product);
+    });
+    console.log(firebaseProducts);
+};
+
+
+const getFirebaseCart = async (userId) => {
+    const docRef = doc(db, "cart", userId);
+    const docSnap = await getDoc(docRef);
+    return docSnap.exists() ? docSnap.data() : {
+        products: []
+    }
+};
+
+const addProductsToCart = async (products) => {
+    console.log(products)
+    await setDoc(doc(db,"cart", userLogged.uid), {
+        products
+    });
+};
+
+
+
+
+const getProduct = async () => {
+    const url = window.location.search;
+    const searchParams = new URLSearchParams(url);
+    const productId = searchParams.get("id");
+
+    const docRef = doc(db, "products", productId);
+    const docSnap = await getDoc(docRef);
+    const data = docSnap.data();
+
+    productSection.classList.add("loaded");
+    spinner.classList.add("loaded");
+
+    loadProductInfo(data,productId);
+
+}
 
 
 getProduct();

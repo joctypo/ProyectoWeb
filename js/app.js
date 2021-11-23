@@ -178,3 +178,5 @@ onAuthStateChanged(auth, async (user) => {
 
     getAllProducts();
 });
+
+

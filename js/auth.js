@@ -5,6 +5,7 @@ import { getFirestore, doc, setDoc, getDoc } from "https://www.gstatic.com/fireb
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const auth = getAuth();
+
 const registerForm = document.getElementById("register");
 const loginForm = document.getElementById("login");
 const logoutButton = document.getElementById("logout");
@@ -35,13 +36,7 @@ const login = async (email, password) => {
         
         console.log(userInfo);
 
-        if (userInfo.isAdmin === true) {
-            creatorr.classList.add("hidden");
-            creatorr.classList.add("visible");
-        } else {
-            creatorr.classList.remove("hidden");
-            creatorr.classList.remove("visible");
-        }
+      
 
 
     } catch (e) {
@@ -126,8 +121,9 @@ onAuthStateChanged(auth, (user) => {
     if (user) {
         loginForm.classList.add("hidden");
         logoutButton.classList.add("visible");
-
+        
     } else {
+        
         loginForm.classList.remove("hidden");
         logoutButton.classList.remove("visible");
     }

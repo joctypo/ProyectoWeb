@@ -21,6 +21,7 @@ const getMyCart = () => {
 };
 
 const removeProduct = (productId) => {
+   
     const cart = getMyCart();
     const newCart = cart.filter(product => product.id !== productId);
     localStorage.setItem("cart", JSON.stringify(newCart));

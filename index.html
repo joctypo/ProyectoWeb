@@ -19,13 +19,12 @@
 
     <header>
         <nav class="nav">
-            <a href="#"><img class="nav_logo" src="./images/Logo.svg" alt="Logo el tintero"></a>
+            <a href="#"><img class="nav_logo" id="logo"  src="./images/Logo.svg" alt="Logo el tintero"></a>
             <ul class="nav_list">
                 <li><a href="#">Inicio</a></li>
-                <li><a href="./shop.html">Tienda</a></li>
-                <li id="creatorr"><a href="./create.html">Nuevo Producto</a></li>
-                <li><a href="./login.html">Ingresar</a></li>
-                <li><a href="./cart.html">Mi Carrito</a></li>
+                <li><a href="#about">Nosotros</a></li>
+                <li><a href="#contactus">Contáctanos</a></li>
+
             </ul>
         </nav>
     </header>
@@ -58,15 +57,15 @@
         </div>
     </div>
 
-    <div class="features">
-        <div class="features__item">
-            <img src="./images/clientes.png" alt="10 Clientes">
+    <div class="features" >
+        <div class="features__item" >
+            <img id="clients1" src="./images/clientes.png" alt="10 Clientes">
         </div>
         <div class="features__item">
-            <img src="./images/publicaciones.png" alt="1620 Publicaciones">
+            <img id="clients2"  src="./images/publicaciones.png" alt="1620 Publicaciones">
         </div>
         <div class="features__item">
-            <img src="./images/pagins.png" alt="3 Páginas web">
+            <img id="clients3" src="./images/pagins.png" alt="3 Páginas web">
         </div>
     </div>
 
@@ -79,12 +78,12 @@
     </div>
 
     <div class="brands">
-        <div><img src="./images/monticello.png" alt="Logo monticello"></div>
-        <div><img src="./images/miranda.png" alt="Logo Miranda"></div>
-        <div><img src="./images/akarella.png" alt="Logo Akarella"></div>
-        <div><img src="./images/rabat.png" alt="Logo Rabat"></div>
-        <div><img src="./images/biurika.png" alt="Logo Biurika"></div>
-        <div><img src="./images/tintero.png" alt="Logo El Tintero"></div>
+        <div><img id="brand1"  src="./images/monticello.png" alt="Logo monticello"></div>
+        <div><img id="brand2" src="./images/miranda.png" alt="Logo Miranda"></div>
+        <div><img id="brand3" src="./images/akarella.png" alt="Logo Akarella"></div>
+        <div><img id="brand4" src="./images/rabat.png" alt="Logo Rabat"></div>
+        <div><img id="brand5" src="./images/biurika.png" alt="Logo Biurika"></div>
+        <div><img id="brand6" src="./images/tintero.png" alt="Logo El Tintero"></div>
     </div>
     <!--flex wrap-->
 
@@ -92,8 +91,11 @@
         <img class="picture" src="./images/copastres.jpg" alt="Copas de café">
     </div>
 
+  
+
+
     <div class="features1">
-        <div class="features__item__1">
+        <div class="features__item__1" id="features__item__1">
             <img src="./images/cafeverde.svg" alt="Símbolo de café verde">
             <h2 class="features__item__tittle">Gráficos</h2>
             <ul>
@@ -106,7 +108,7 @@
                 <li>Creación de identidad visual</li>
             </ul>
         </div>
-        <div class="features__item__1">
+        <div class="features__item__1" id="features__item__2">
             <img src="./images/cafevino.svg" alt="Símbolo de café vinotinto">
             <h2 class="features__item__tittle">Mercadeo</h2>
             <ul>
@@ -118,7 +120,9 @@
 
             </ul>
         </div>
-        <div class="features__item__1">
+
+
+        <div class="features__item__1" id="features__item__3">
             <img src="./images/cafefucsia2.svg" alt="Símbolo de café Fucsia">
             <h2 class="features__item__tittle">Social Media</h2>
             <ul>
@@ -174,9 +178,14 @@
         </div>
     </footer>
 
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
     <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
     <script src="./js/utils.js"></script>
     <script type="module" src="./js/admin.js"></script>
+    <script src="./js/animation.js"></script>
+
+    
 </body>
 
 </html>

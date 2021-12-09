@@ -843,4 +843,15 @@ h1 {
 #creatorr.visible {
   display: inline-block;
 }
+
+.container {
+  margin-top: 12rem;
+  padding: 0% 25%;
+}
+
+.tittle {
+  text-align: center;
+  font-size: 2rem;
+  color: #4B3E35;
+}
 /*# sourceMappingURL=style.css.map */
